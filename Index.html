@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
 
-	fech('https://www.el-tiempo.net/api/json/v2/provincias')
+	fetch('https://www.el-tiempo.net/api/json/v2/provincias')
 		.then(response => response.json())
         .then(data => console.log(data));
 

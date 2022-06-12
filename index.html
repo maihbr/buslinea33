@@ -7,15 +7,25 @@
 </head>
 <body>
 
-	<h1>Index v3</h1><hr>
+	<h1>Index v3.1</h1><hr>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
 <script type="text/javascript">
 	
-const url ='https://auvasa-api.herokuapp.com/stop/1038';
-	
-$.get(url,function(result,status){	
-	console.log(result);	
+const settigns={
+	'cache':false,
+	'dataType':'jsonp',
+	'async':true,
+	'url':'auvasa-api.herokuapp.com/stop/1038',
+	'method':'get',
+	'headers':{
+		'accept':'application/json',
+		'Access-Control-Allow-Origin':'*'
+	}
+}
+
+$.ajax(settigns).done(function(response){
+	console.log(response);
 });
 
 </script>

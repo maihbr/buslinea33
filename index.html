@@ -11,12 +11,20 @@
 
 <script type="text/javascript">
 
-	fetch('https://auvasa-api.herokuapp.com/stop/1038').then(response=>{
-		console.log(response);
-		return response.json();
-	}).then(data=>{
-		console.log(data);
-	});
+	const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+const yourUrl ='auvasa-api.herokuapp.com/stop/1038';
+
+fetch(corsAnywhere + yourUrl, {
+    method: 'GET',
+    headers: new Headers({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+    }),
+})
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+	
 
 </script>
 

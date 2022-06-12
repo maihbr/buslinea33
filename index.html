@@ -8,23 +8,15 @@
 <body>
 
 	<h1>Index v3</h1><hr>
-
-<script type="text/javascript">
-
-	const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-const yourUrl ='auvasa-api.herokuapp.com/stop/1038';
-
-fetch(corsAnywhere + yourUrl, {
-    method: 'GET',
-    headers: new Headers({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-    }),
-})
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	
+<script type="text/javascript">
+	
+const yourUrl ='https://auvasa-api.herokuapp.com/stop/1038';
+
+$.get(yourUrl, function(data, status){
+ 	alert("Data: " + data + "\nStatus: " + status);
+});	
 
 </script>
 
